@@ -13,7 +13,7 @@ export const Welcome3Container = ({
   navigation,
 }: Welcome3ScreenNavigatorProps) => {
   const onNavigate = (screen: RootScreens) => {
-    navigation.navigate(screen);
+    navigation.replace(screen);
   };
   return <Welcome3 onNavigate={onNavigate} />;
 };

@@ -38,7 +38,7 @@ const ApplicationNavigator = () => {
         <RootStack.Screen
           name={RootScreens.MAIN}
           component={MainNavigator}
-          options={{ gestureEnabled: false }}
+          options={{}}
         />        
       </RootStack.Navigator>
     </NavigationContainer>
