@@ -1,6 +1,6 @@
 import React from "react";
 import { i18n, LocalizationKey } from "@/Localization";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Button } from "native-base";
 import { RootScreens } from "..";
@@ -10,11 +10,15 @@ export const Welcome = (props: {
 }) => {
   return (
     <View style={styles.container}>
-      <Text>{i18n.t(LocalizationKey.WELCOME)}</Text>
+      
+      <Pressable onPress={() => props.onNavigate(RootScreens.WELCOME2)}>
+      <Image
+        source={require('../../../assets/Logo.png')} // Replace with the correct path to your splash screen image
+        style={styles.Logo}
+      />
+      </Pressable>
+     
       <StatusBar style="auto" />
-      <Button onPress={() => props.onNavigate(RootScreens.MAIN)}>
-        {i18n.t(LocalizationKey.START)}
-      </Button>
     </View>
   );
 };
@@ -22,8 +26,12 @@ export const Welcome = (props: {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#fdb623",
     alignItems: "center",
     justifyContent: "center",
   },
+  Logo:{
+    alignItems: "center",
+    justifyContent: "center",
+  }
 });
